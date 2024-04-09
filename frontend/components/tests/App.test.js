@@ -17,16 +17,20 @@ describe('Stranger Things App', () => {
   })
   test('App mounts without crashing', () => {
     // 👉 TASK: print the simulated DOM using screen.debug
+    screen.debug()
   })
   test('App renders the correct texts', async () => {
     // 👉 TASK: click on the button that displays "Press to Get Show Data"
-
+    await user.click(screen.queryByText('Press to Get Show Data'));
     // 👉 TASK: create a waitFor and await for the following to be true:
     //    - The text "Press to Get Show Data" is no longer in the DOM
     //    - The text "Stranger Things" exists in the DOM
     //    - The text "A love letter to the '80s classics that captivated a generation" exists in the DOM
     //    - The text "Select A Season" exists in the DOM
     // ❗ You will need { exact: false } to select the longer text
+    await waitFor(() => {
+      expect(screen.queryByText('Press to Get Show Data')).not.toBeInTheDocument();
+    })
 
     // 👉 TASK: select Season 2 from the dropdown
     // ❗ Don't forget user actions need the await keyword
