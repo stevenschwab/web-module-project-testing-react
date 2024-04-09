@@ -30,6 +30,9 @@ describe('Stranger Things App', () => {
     // ❗ You will need { exact: false } to select the longer text
     await waitFor(() => {
       expect(screen.queryByText('Press to Get Show Data')).not.toBeInTheDocument();
+      expect(screen.queryByText('Stranger Things')).toBeInTheDocument();
+      expect(screen.queryByText(/A love letter to the '80s classics that captivated a generation/i)).toBeInTheDocument();
+      expect(screen.queryByText('Select A Season')).toBeInTheDocument();
     })
 
     // 👉 TASK: select Season 2 from the dropdown
