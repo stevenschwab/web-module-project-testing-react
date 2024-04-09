@@ -46,6 +46,8 @@ describe('Stranger Things App', () => {
     //    - The text "Chapter One: MADMAX" exists in the DOM
     //    - The text "One year after the events with the Upside Down and the Demogorgon" exists in the DOM
     // ❗ You will need { exact: false } to select the longer text
-
+    expect(screen.queryByText('Season 2, Episode 1')).toBeInTheDocument();
+    expect(screen.queryByText('Chapter One: MADMAX')).toBeInTheDocument();
+    expect(screen.queryByText(/One year after the events with the Upside Down and the Demogorgon/i)).toBeInTheDocument();
   })
 })
