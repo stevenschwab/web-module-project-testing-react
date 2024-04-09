@@ -40,7 +40,7 @@ that captivated a generation", { exact: false });
     // ❗ Don't forget user actions need the await keyword
     // ❗ Use the selectOptions user action
     // ❗ Grab the select element using querySelector
-    await userEvent.selectOptions(screen.getByRole('combobox'), ['Season 2'])
+    await user.selectOptions(screen.getByRole('combobox'), ['Season 2'])
 
     // 👉 TASK: create the following assertions:
     //    - The text "Season 2, Episode 1" exists in the DOM
