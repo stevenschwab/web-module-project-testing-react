@@ -39,25 +39,8 @@ describe('Episode component', () => {
     screen.getByAltText("episode image");
     // 👉 TASK: rerender the component passing episode data lacking an image
     // ❗ Study the Episode component to understand what happens in this case
-    rerender(<Episode episode={
-      {
-        airdate: "2016-07-15",
-        airstamp: "2016-07-15T12:00:00+00:00",
-        airtime: "",
-        id: 553946,
-        image: "",
-        name: "Chapter One: The Vanishing of Will Byers",
-        number: 1,
-        rating: { average: 8.2 },
-        runtime: 49,
-        season: 1,
-        summary: "A young boy mysteriously disappears, and his panicked mother \
-      demands that the police find him. Meanwhile, the boy's friends conduct \
-      their own search, and meet a mysterious girl in the forest.",
-        type: "regular",
-        url: "https://www.tvmaze.com/episodes/553946/stranger-things-1x01-chapter-one-the-vanishing-of-will-byers",
-      }
-    } />)
+    const { image, ...rest } = exampleEpisodeData
+    rerender(<Episode episode={rest} />)
     // 👉 TASK: check that the default image appears in the DOM
     // ❗ Use querySelector to select the image by its src attribute
     expect(container.querySelector("img[src='https://i.ibb.co/2FsfXqM/stranger-things.png']"));
