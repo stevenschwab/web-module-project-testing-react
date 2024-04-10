@@ -50,6 +50,6 @@ describe('Episode component', () => {
     // ❗ Study the Episode component to understand what happens in this case
     rerender(<Episode episode={undefined} />);
     // 👉 TASK: check that the "Loading episode..." text is present
-    expect(screen.queryByText('Loading episode...')).toBeInTheDocument();
+    screen.getByText('Loading episode...');
   })
 })
