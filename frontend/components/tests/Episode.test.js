@@ -34,7 +34,7 @@ describe('Episode component', () => {
     // 👉 TASK: render the component passing episode data and getting the rerender utility
     const { rerender, container } = render(<Episode episode={exampleEpisodeData} />);
     // 👉 TASK: check that the summary renders to the DOM
-    expect(screen.queryByText(/A young boy mysteriously disappears/i)).toBeInTheDocument();
+    screen.getByText(exampleEpisodeData.summary);
     // 👉 TASK: check that the alt text "episode image" is present
     expect(screen.getByAltText("episode image")).toBeInTheDocument();
     // 👉 TASK: rerender the component passing episode data lacking an image
