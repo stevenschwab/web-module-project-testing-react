@@ -36,7 +36,7 @@ describe('Episode component', () => {
     // 👉 TASK: check that the summary renders to the DOM
     screen.getByText(exampleEpisodeData.summary);
     // 👉 TASK: check that the alt text "episode image" is present
-    expect(screen.getByAltText("episode image")).toBeInTheDocument();
+    screen.getByAltText("episode image");
     // 👉 TASK: rerender the component passing episode data lacking an image
     // ❗ Study the Episode component to understand what happens in this case
     rerender(<Episode episode={
